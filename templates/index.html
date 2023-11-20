@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    <title>Recherche des Stations Velib</title>
+</head>
+<body>
+    <div class="container">
+        <h1>Bienvenue sur l'application Velib !</h1>
+        <!-- Modification ici : Ajout de l'attribut 'action' et 'method' dans la balise de formulaire -->
+        <form id="velib-form" action="/closest_velib_stations" method="post">
+            <!-- Modification ici : Ajout de l'attribut 'name' au champ de saisie -->
+            <label for="location">Entrez votre position :</label>
+            <input type="text" id="location" name="location" placeholder="Ex: Tour Eiffel" required>
+            <button type="submit">Rechercher</button>
+        </form>
+        <div id="result" class="hidden">
+            <h2>Stations Velib les plus proches :</h2>
+            <ul id="stations-list"></ul>
+        </div>
+    </div>
+</body>
+</html>
